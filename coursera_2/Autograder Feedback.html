@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!-- saved from url=(0106)https://www.coursera.org/api/rest/v1/executorruns/richfeedback?id=UQg66I78RdKIOuiO_EXSBQ&feedbackType=HTML -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Autograder Feedback</title>
+
+</head>
+
+<body>
+
+<p>
+<em>
+See the Assessment Guide for information on how to interpret this report.
+</em>
+<br><br>
+
+</p><h2>ASSESSMENT SUMMARY</h2>
+<pre>
+Compilation:  <font color="#009900">PASSED</font>
+API:          <font color="#009900">PASSED</font>
+
+SpotBugs:     <font color="#990000">FAILED (2 warnings)</font>
+PMD:          <font color="#009900">PASSED</font>
+Checkstyle:   <font color="#990000">FAILED (0 errors, 20 warnings)</font>
+
+Correctness:  <font color="#009900">32/32 tests passed</font>
+Memory:       <font color="#009900">No tests available for autograding.</font>
+Timing:       <font color="#009900">No tests available for autograding.</font>
+
+Aggregate score: 100.00%
+[ Compilation: 5%, API: 5%, Style: 0%, Correctness: 90% ]
+</pre>
+
+
+<br><br>
+
+<h2>ASSESSMENT DETAILS</h2>
+
+<pre>
+The following files were submitted:
+----------------------------------
+ 618 Feb  6 03:16 BandMatrix.java
+ 351 Feb  6 03:16 GeneralizedHarmonic.java
+ 155 Feb  6 03:16 Project_Default.xml
+1.6K Feb  6 03:16 RandomWalker.class
+1.4K Feb  6 03:16 RandomWalker.java
+1.7K Feb  6 03:16 RandomWalkers.class
+1.7K Feb  6 03:16 RandomWalkers.java
+ 610 Feb  6 03:16 checkstyle-idea.xml
+ 162 Feb  6 03:16 dictionaries
+ 433 Feb  6 03:16 loops.iml
+ 596 Feb  6 03:16 misc.xml
+ 257 Feb  6 03:16 modules.xml
+ 357 Feb  6 03:16 saveactions_settings.xml
+ 431 Feb  6 03:16 teste.class
+3.0K Feb  6 03:16 workspace.xml
+
+
+********************************************************************************
+*  COMPILING                                                                    
+********************************************************************************
+
+
+% javac GeneralizedHarmonic.java
+*-----------------------------------------------------------
+
+% javac BandMatrix.java
+*-----------------------------------------------------------
+
+% javac RandomWalker.java
+*-----------------------------------------------------------
+
+% javac RandomWalkers.java
+*-----------------------------------------------------------
+
+
+================================================================
+
+
+Checking the APIs of your programs.
+*-----------------------------------------------------------
+GeneralizedHarmonic:
+
+BandMatrix:
+
+RandomWalker:
+
+RandomWalkers:
+
+================================================================
+
+
+********************************************************************************
+*  CHECKING STYLE AND COMMON BUG PATTERNS                                       
+********************************************************************************
+
+
+% spotbugs *.class
+*-----------------------------------------------------------
+L D NS_NON_SHORT_CIRCUIT NS: Questionable use of a non-short-circuit logic operator ('&amp;' or '|'). Did you mean to use '&amp;&amp;' or '||' instead?  At RandomWalker.java:[line 23]
+L D NS_NON_SHORT_CIRCUIT NS: Questionable use of a non-short-circuit logic operator ('&amp;' or '|'). Did you mean to use '&amp;&amp;' or '||' instead?  At RandomWalkers.java:[line 29]
+SpotBugs ends with 2 warnings.
+
+
+================================================================
+
+
+% pmd .
+*-----------------------------------------------------------
+
+
+================================================================
+
+
+% checkstyle *.java
+*-----------------------------------------------------------
+[WARN] BandMatrix.java:3:14: The local variable 'arg_1' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] BandMatrix.java:4:14: The local variable 'arg_2' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] GeneralizedHarmonic.java:3:14: The local variable 'num_1' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] GeneralizedHarmonic.java:4:14: The local variable 'num_2' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalker.java:4:44: The local variable 'x_cords' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalker.java:4:57: The local variable 'y_cords' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalker.java:16:17: The local variable 'max_x' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalker.java:17:17: The local variable 'min_x' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalker.java:19:17: The local variable 'max_y' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalker.java:20:17: The local variable 'min_y' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalker.java:23:29: Use at least one digit to the left of the decimal point. For example, use the literal '0.5' instead of '.5'. [FloatingPointLiteral]
+[WARN] RandomWalker.java:26:36: Use at least one digit to the left of the decimal point. For example, use the literal '0.5' instead of '.5'. [FloatingPointLiteral]
+[WARN] RandomWalker.java:29:36: Use at least one digit to the left of the decimal point. For example, use the literal '0.5' instead of '.5'. [FloatingPointLiteral]
+[WARN] RandomWalkers.java:7:13: The local variable 'x_cords' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalkers.java:7:22: The local variable 'y_cords' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalkers.java:11:18: The local variable 'current_attempt' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalkers.java:22:21: The local variable 'max_x' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalkers.java:23:21: The local variable 'min_x' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalkers.java:25:21: The local variable 'max_y' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] RandomWalkers.java:26:21: The local variable 'min_y' must start with a lowercase letter and use camelCase. [LocalVariableName]
+Checkstyle ends with 0 errors and 20 warnings.
+
+% custom checkstyle checks for GeneralizedHarmonic.java
+*-----------------------------------------------------------
+
+% custom checkstyle checks for BandMatrix.java
+*-----------------------------------------------------------
+
+% custom checkstyle checks for RandomWalker.java
+*-----------------------------------------------------------
+
+% custom checkstyle checks for RandomWalkers.java
+*-----------------------------------------------------------
+
+
+================================================================
+
+
+********************************************************************************
+*  TESTING CORRECTNESS
+********************************************************************************
+
+Testing correctness of GeneralizedHarmonic
+*-----------------------------------------------------------
+Running 7 total tests.
+
+Test 1: check output format for inputs from assignment specification
+  % java GeneralizedHarmonic 1 1
+  1.0
+
+  % java GeneralizedHarmonic 2 1
+  1.5
+
+  % java GeneralizedHarmonic 3 1
+  1.8333333333333333
+
+  % java GeneralizedHarmonic 4 1
+  2.083333333333333
+
+  % java GeneralizedHarmonic 1 2
+  1.0
+
+  % java GeneralizedHarmonic 2 2
+  1.25
+
+  % java GeneralizedHarmonic 3 2
+  1.3611111111111112
+
+  % java GeneralizedHarmonic 4 2
+  1.4236111111111112
+
+==&gt; passed
+
+Test 2: check correctness for inputs from assignment specification
+  * java GeneralizedHarmonic 1 1
+  * java GeneralizedHarmonic 1 2
+  * java GeneralizedHarmonic 1 3
+  * java GeneralizedHarmonic 1 4
+  * java GeneralizedHarmonic 2 1
+  * java GeneralizedHarmonic 2 2
+  * java GeneralizedHarmonic 2 3
+  * java GeneralizedHarmonic 3 4
+==&gt; passed
+
+Test 3: check correctness when n = r
+  * java GeneralizedHarmonic 1 1
+  * java GeneralizedHarmonic 2 2
+  * java GeneralizedHarmonic 3 3
+  * java GeneralizedHarmonic 4 4
+  * java GeneralizedHarmonic 5 5
+  * java GeneralizedHarmonic 6 6
+  * java GeneralizedHarmonic 7 7
+  * java GeneralizedHarmonic 8 8
+==&gt; passed
+
+Test 4: check when r is fixed and n varies
+  * r = 1
+  * r = 2
+  * r = 3
+  * r = 4
+  * r = 5
+  * r = 6
+  * r = 7
+==&gt; passed
+
+Test 5: check when n is fixed and r varies
+  * n = 1
+  * n = 2
+  * n = 3
+  * n = 4
+  * n = 5
+  * n = 6
+  * n = 7
+==&gt; passed
+
+Test 6: check when r is 0
+  * r = 0
+==&gt; passed
+
+Test 7: check when r is negative
+  * r = -1
+  * r = -2
+  * r = -3
+==&gt; passed
+
+
+GeneralizedHarmonic Total: 7/7 tests passed!
+
+
+================================================================
+Testing correctness of BandMatrix
+*-----------------------------------------------------------
+Running 7 total tests.
+
+Test 1: check output format
+  % java BandMatrix 8 0
+  *  0  0  0  0  0  0  0 
+  0  *  0  0  0  0  0  0 
+  0  0  *  0  0  0  0  0 
+  0  0  0  *  0  0  0  0 
+  0  0  0  0  *  0  0  0 
+  0  0  0  0  0  *  0  0 
+  0  0  0  0  0  0  *  0 
+  0  0  0  0  0  0  0  * 
+
+  % java BandMatrix 8 1
+  *  *  0  0  0  0  0  0 
+  *  *  *  0  0  0  0  0 
+  0  *  *  *  0  0  0  0 
+  0  0  *  *  *  0  0  0 
+  0  0  0  *  *  *  0  0 
+  0  0  0  0  *  *  *  0 
+  0  0  0  0  0  *  *  * 
+  0  0  0  0  0  0  *  * 
+
+  % java BandMatrix 8 2
+  *  *  *  0  0  0  0  0 
+  *  *  *  *  0  0  0  0 
+  *  *  *  *  *  0  0  0 
+  0  *  *  *  *  *  0  0 
+  0  0  *  *  *  *  *  0 
+  0  0  0  *  *  *  *  * 
+  0  0  0  0  *  *  *  * 
+  0  0  0  0  0  *  *  * 
+
+  % java BandMatrix 8 3
+  *  *  *  *  0  0  0  0 
+  *  *  *  *  *  0  0  0 
+  *  *  *  *  *  *  0  0 
+  *  *  *  *  *  *  *  0 
+  0  *  *  *  *  *  *  * 
+  0  0  *  *  *  *  *  * 
+  0  0  0  *  *  *  *  * 
+  0  0  0  0  *  *  *  * 
+
+==&gt; passed
+
+Test 2: check correctness for inputs from assignment specification
+  * java BandMatrix 8 0
+  * java BandMatrix 8 1
+  * java BandMatrix 8 2
+  * java BandMatrix 8 3
+==&gt; passed
+
+Test 3: check correctness when width = 0
+  * java BandMatrix 2 0
+  * java BandMatrix 3 0
+  * java BandMatrix 4 0
+  * java BandMatrix 5 0
+  * java BandMatrix 6 0
+  * java BandMatrix 7 0
+==&gt; passed
+
+Test 4: check correctness when n = width
+  * java BandMatrix 2 2
+  * java BandMatrix 3 3
+  * java BandMatrix 4 4
+  * java BandMatrix 5 5
+  * java BandMatrix 6 6
+  * java BandMatrix 7 7
+==&gt; passed
+
+Test 5: check corner cases
+  * java BandMatrix 0 0
+  * java BandMatrix 1 0
+  * java BandMatrix 2 0
+  * java BandMatrix 8 9
+  * java BandMatrix 8 20
+==&gt; passed
+
+Test 6: check correctness when n is fixed and width varies
+  * n = 1
+  * n = 2
+  * n = 3
+  * n = 4
+  * n = 5
+  * n = 6
+  * n = 7
+==&gt; passed
+
+Test 7: check correctness when width is fixed and n varies
+  * width = 0
+  * width = 1
+  * width = 2
+  * width = 3
+  * width = 4
+  * width = 5
+  * width = 6
+  * width = 7
+==&gt; passed
+
+
+BandMatrix Total: 7/7 tests passed!
+
+
+================================================================
+Testing correctness of RandomWalker
+*-----------------------------------------------------------
+Running 11 total tests.
+
+Test 1: check output format for inputs from assignment specification
+  % java RandomWalker 3
+  (0, 0)
+  (0, -1)
+  (1, -1)
+  (2, -1)
+  steps = 3
+
+  % java RandomWalker 5
+  (0, 0)
+  (1, 0)
+  (1, -1)
+  (0, -1)
+  (0, -2)
+  (0, -3)
+  (0, -4)
+  (0, -3)
+  (-1, -3)
+  (-1, -2)
+  (0, -2)
+  (1, -2)
+  (1, -3)
+  (0, -3)
+  (0, -2)
+  (1, -2)
+  (1, -3)
+  (1, -4)
+  steps = 17
+
+==&gt; passed
+
+Test 2: check correctness of inputs from assignment specification
+  * java RandomWalker 3
+  * java RandomWalker 5
+==&gt; passed
+
+Test 3: check that random walk stops when distance r from origin
+  * java RandomWalker 3
+  * java RandomWalker 5
+  * java RandomWalker 10
+==&gt; passed
+
+Test 4: check that first point in random walk is the origin
+  * java RandomWalker 3
+  * java RandomWalker 5
+  * java RandomWalker 10
+==&gt; passed
+
+Test 5: check that successive points in random walk are neighbors
+  * java RandomWalker 3
+  * java RandomWalker 5
+  * java RandomWalker 10
+==&gt; passed
+
+Test 6: check that number of steps printed is consistent with number of points printed
+  * java RandomWalker 3
+  * java RandomWalker 5
+  * java RandomWalker 10
+==&gt; passed
+
+Test 7: check correctness for corner cases
+  * java RandomWalker 0
+  * java RandomWalker 1
+==&gt; passed
+
+Test 8: check that program produces different walks each time
+  * java RandomWalker 6 [ twice ]
+  * java RandomWalker 10 [ twice ]
+  * java RandomWalker 20 [ twice ]
+==&gt; passed
+
+Test 9: check randomness of individual steps in walk
+  * java RandomWalker 32
+  * java RandomWalker 128
+  * java RandomWalker 512
+==&gt; passed
+
+Test 10: check randomness of number of steps
+  * java RandomWalker 2 [ repeated 1024 times ]
+  * java RandomWalker 3 [ repeated 8192 times ]
+  * java RandomWalker 4 [ repeated 32768 times ]
+  * java RandomWalker 5 [ repeated 131072 times ]
+==&gt; passed
+
+Test 11: check what happens when Math.random() always returns the same value
+  * Math.random() always returns 0.0
+  * Math.random() always returns 0.25
+  * Math.random() always returns 0.5
+  * Math.random() always returns 0.75
+==&gt; passed
+
+
+RandomWalker Total: 11/11 tests passed!
+
+
+================================================================
+Testing correctness of RandomWalkers
+*-----------------------------------------------------------
+Running 7 total tests.
+
+Test 1: check output format
+  % java RandomWalkers 5 10000
+  average number of steps = 14.823
+
+  % java RandomWalkers 10 1000
+  average number of steps = 59.564
+
+  % java RandomWalkers 20 123456
+  average number of steps = 236.21576918092276
+
+  % java RandomWalkers 40 1
+  average number of steps = 236.0
+
+  % java RandomWalkers 1 1000
+  average number of steps = 1.0
+
+  % java RandomWalkers 1000 1
+  average number of steps = 706282.0
+
+  % java RandomWalkers 0 333
+  average number of steps = 0.0
+
+==&gt; passed
+
+Test 2: check average number of steps (trials = 10000)
+  * java RandomWalkers 1 10000
+  * java RandomWalkers 2 10000
+  * java RandomWalkers 3 10000
+  * java RandomWalkers 4 10000
+  * java RandomWalkers 5 10000
+  * java RandomWalkers 10 10000
+  * java RandomWalkers 20 10000
+  * java RandomWalkers 40 10000
+==&gt; passed
+
+Test 3: check average number of steps (radius = 5)
+  * java RandomWalkers 5 100
+  * java RandomWalkers 5 1000
+  * java RandomWalkers 5 10000
+  * java RandomWalkers 5 100000
+  * java RandomWalkers 5 1000000
+==&gt; passed
+
+Test 4: check average number of steps (radius = 0)
+  * java RandomWalkers 0 1000
+  * java RandomWalkers 0 100
+  * java RandomWalkers 0 1
+==&gt; passed
+
+Test 5: check that the average number of steps is not an integer
+  * java RandomWalkers 10 1000
+  * java RandomWalkers 7 2500
+  * java RandomWalkers 3 10000
+==&gt; passed
+
+Test 6: check that program produces different result each time
+  * java RandomWalkers 10 10000 [ repeated twice ]
+  * java RandomWalkers 20 1000 [ repeated twice ]
+  * java RandomWalkers 40 2000 [ repeated twice ]
+==&gt; passed
+
+Test 7: check randomness of average number of steps when trials = 1
+  * java RandomWalkers 2 1 [ repeated 1024 times ]
+  * java RandomWalkers 3 1 [ repeated 8192 times ]
+  * java RandomWalkers 4 1 [ repeated 65536 times ]
+  * java RandomWalkers 5 1 [ repeated 1048576 times ]
+==&gt; passed
+
+
+RandomWalkers Total: 7/7 tests passed!
+
+
+================================================================
+
+</pre>
+
+
+</body></html>

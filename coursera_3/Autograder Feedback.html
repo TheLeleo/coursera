@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<!-- saved from url=(0106)https://www.coursera.org/api/rest/v1/executorruns/richfeedback?id=NZkzH5CdQg-ZMx-QncIPZA&feedbackType=HTML -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Autograder Feedback</title>
+
+</head>
+
+<body>
+
+<p>
+<em>
+See the Assessment Guide for information on how to interpret this report.
+</em>
+<br><br>
+
+</p><h2>ASSESSMENT SUMMARY</h2>
+<pre>
+Compilation:  <font color="#009900">PASSED</font>
+API:          <font color="#009900">PASSED</font>
+
+SpotBugs:     <font color="#009900">PASSED</font>
+PMD:          <font color="#990000">FAILED (1 warning)</font>
+Checkstyle:   <font color="#990000">FAILED (0 errors, 7 warnings)</font>
+
+Correctness:  <font color="#129900">25/28 tests passed</font>
+Memory:       <font color="#009900">No tests available for autograding.</font>
+Timing:       <font color="#009900">No tests available for autograding.</font>
+
+Aggregate score: 90.36%
+[ Compilation: 5%, API: 5%, Style: 0%, Correctness: 90% ]
+</pre>
+
+
+<br><br>
+
+<h2>ASSESSMENT DETAILS</h2>
+
+<pre>
+The following files were submitted:
+----------------------------------
+1.7K Feb  6 18:48 Birthday.java
+1.3K Feb  6 18:48 DiscreteDistribution.java
+2.0K Feb  6 18:48 Minesweeper.java
+ 155 Feb  6 18:48 Project_Default.xml
+ 511 Feb  6 18:48 ThueMorse.java
+ 433 Feb  6 18:48 arrays.iml
+ 610 Feb  6 18:48 checkstyle-idea.xml
+ 162 Feb  6 18:48 dictionaries
+ 596 Feb  6 18:48 misc.xml
+ 259 Feb  6 18:48 modules.xml
+ 357 Feb  6 18:48 saveactions_settings.xml
+2.6K Feb  6 18:48 workspace.xml
+
+
+********************************************************************************
+*  COMPILING                                                                    
+********************************************************************************
+
+
+% javac DiscreteDistribution.java
+*-----------------------------------------------------------
+
+% javac ThueMorse.java
+*-----------------------------------------------------------
+
+% javac Birthday.java
+*-----------------------------------------------------------
+
+% javac Minesweeper.java
+*-----------------------------------------------------------
+
+
+================================================================
+
+
+Checking the APIs of your programs.
+*-----------------------------------------------------------
+DiscreteDistribution:
+
+ThueMorse:
+
+Birthday:
+
+Minesweeper:
+
+================================================================
+
+
+********************************************************************************
+*  CHECKING STYLE AND COMMON BUG PATTERNS                                       
+********************************************************************************
+
+
+% spotbugs *.class
+*-----------------------------------------------------------
+
+
+================================================================
+
+
+% pmd .
+*-----------------------------------------------------------
+Minesweeper.java:41: Avoid quadruple nested 'if' statements; they are hard to read and error-prone to maintain. [AvoidDeeplyNestedIfStmts]
+PMD ends with 1 warning.
+
+
+================================================================
+
+
+% checkstyle *.java
+*-----------------------------------------------------------
+[WARN] Birthday.java:32:16: The local variable 'attempts_double' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] Birthday.java:36:17: The local variable 'CountGuests' must start with a lowercase letter and use camelCase. [LocalVariableName]
+[WARN] Minesweeper.java:1:1: Do not use 'java.util.Random' in this course. Instead, use an appropriate method from 'StdRandom'. [IllegalImport]
+[WARN] Minesweeper.java:10:9: Do not use 'java.util.Random' in this course. Instead, use an appropriate method from 'StdRandom'. [IllegalType]
+[WARN] Minesweeper.java:36:25: Using a quadruple nested loop suggests poor design in this program. [NestedForDepth]
+[WARN] Minesweeper.java:41:37: Using a quadruple nested if statement suggests poor design in this program. [NestedIfDepth]
+Checkstyle ends with 0 errors and 6 warnings.
+
+% custom checkstyle checks for DiscreteDistribution.java
+*-----------------------------------------------------------
+
+% custom checkstyle checks for ThueMorse.java
+*-----------------------------------------------------------
+
+% custom checkstyle checks for Birthday.java
+*-----------------------------------------------------------
+
+% custom checkstyle checks for Minesweeper.java
+*-----------------------------------------------------------
+[WARN] Minesweeper.java:1: You must call 'Math.random()' in this program. [Design]
+Checkstyle ends with 0 errors and 1 warning.
+
+
+================================================================
+
+
+********************************************************************************
+*  TESTING CORRECTNESS
+********************************************************************************
+
+Testing correctness of DiscreteDistribution
+*-----------------------------------------------------------
+Running 6 total tests.
+
+Test 1: check output format
+  % java DiscreteDistribution 9 1 1 1 1 1 1
+  1 
+  5 5 3 6 2 3 6 4 
+
+  % java DiscreteDistribution 8 10 20 30 40 50 60 50 40 30 20 10
+  9 
+  9 10 6 5 4 7 8 
+
+  % java DiscreteDistribution 7 10 10 10 10 10 50
+  4 
+  6 5 2 6 6 1 
+
+  % java DiscreteDistribution 6 50 50
+  1 
+  1 2 1 1 2 
+
+  % java DiscreteDistribution 5 80 20
+  1 
+  1 1 1 1 
+
+  % java DiscreteDistribution 4 301 176 125 97 79 67 58 51 46
+  2 
+  3 5 4 
+
+  % java DiscreteDistribution 3 19 49 60 47 32 18 3 3 1
+  2 
+  3 2 
+
+  % java DiscreteDistribution 2 9316001 10274874 10109130 10045436 9850199 6704495 5886889
+  4 
+  3 
+
+  % java DiscreteDistribution 1 8167 1492 2782 4253 12702 2228 2015 6094 6966 153 772     ...
+  9 
+
+==&gt; passed
+
+Test 2: check that output contains correct number of integers
+  * fair die                           [ repeated 1000 times ]
+  * sum of two dice                    [ repeated 1000 times ]
+  * loaded die                         [ repeated 1000 times ]
+  * fair coin                          [ repeated 1000 times ]
+  * 80/20 biased coin                  [ repeated 1000 times ]
+  * 9 digits in Benford's law          [ repeated 1000 times ]
+  * goals in FIFA World Cup 1990-2002  [ repeated 1000 times ]
+  * U.S. birthdays by day of week      [ repeated 1000 times ]
+  * 26 letters in English language     [ repeated 1000 times ]
+==&gt; passed
+
+Test 3: check that output is a sequence of integers between 1 and n
+  * fair die                           [ repeated 1000 times ]
+  * sum of two dice                    [ repeated 1000 times ]
+  * loaded die                         [ repeated 1000 times ]
+  * fair coin                          [ repeated 1000 times ]
+  * 80/20 biased coin                  [ repeated 1000 times ]
+  * 9 digits in Benford's law          [ repeated 1000 times ]
+  * goals in FIFA World Cup 1990-2002  [ repeated 1000 times ]
+  * U.S. birthdays by day of week      [ repeated 1000 times ]
+  * 26 letters in English language     [ repeated 1000 times ]
+==&gt; passed
+
+Test 4: check that program produces different results when run twice
+  * fair die                           [ repeated 10 times ]
+  * sum of two dice                    [ repeated 12 times ]
+  * loaded die                         [ repeated 10 times ]
+  * fair coin                          [ repeated 20 times ]
+  * 80/20 biased coin                  [ repeated 30 times ]
+  * 9 digits in Benford's law          [ repeated 10 times ]
+  * goals in FIFA World Cup 1990-2002  [ repeated 10 times ]
+  * U.S. birthdays by day of week      [ repeated 14 times ]
+  * 26 letters in English language     [ repeated 10 times ]
+==&gt; passed
+
+Test 5: check randomness
+  * fair die                           [ repeated 100000 times ]
+  * sum of two dice                    [ repeated 100000 times ]
+  * loaded die                         [ repeated 100000 times ]
+  * fair coin                          [ repeated 100000 times ]
+  * 80/20 biased coin                  [ repeated 100000 times ]
+  * 9 digits in Benford's law          [ repeated 100000 times ]
+  * 26 letters in English language     [ repeated 100000 times ]
+  * goals in FIFA World Cup 1990-2002  [ repeated 100000 times ]
+  * U.S. birthdays by day of week      [ repeated 100000 times ]
+==&gt; passed
+
+Test 6: check randomness when n = 1
+  * a_1 = 1                            [ repeated 100000 times ]
+  * a_1 = 100                          [ repeated 100000 times ]
+==&gt; passed
+
+
+DiscreteDistribution Total: 6/6 tests passed!
+
+
+================================================================
+Testing correctness of ThueMorse
+*-----------------------------------------------------------
+Running 5 total tests.
+
+Test 1: check output format
+  % java ThueMorse 2
+  +  -  
+  -  +  
+
+  % java ThueMorse 4
+  +  -  -  +  
+  -  +  +  -  
+  -  +  +  -  
+  +  -  -  +  
+
+  % java ThueMorse 8
+  +  -  -  +  -  +  +  -  
+  -  +  +  -  +  -  -  +  
+  -  +  +  -  +  -  -  +  
+  +  -  -  +  -  +  +  -  
+  -  +  +  -  +  -  -  +  
+  +  -  -  +  -  +  +  -  
+  +  -  -  +  -  +  +  -  
+  -  +  +  -  +  -  -  +  
+
+  % java ThueMorse 16
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  
+  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  -  
+  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  +  
+
+==&gt; passed
+
+Test 2: check correctness when n is a power of 2
+  * java ThueMorse 2
+  * java ThueMorse 4
+  * java ThueMorse 8
+  * java ThueMorse 16
+  * java ThueMorse 32
+  * java ThueMorse 64
+==&gt; passed
+
+Test 3: check correctness when n is not a power of 2
+  * java ThueMorse 3
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  
+      -  +  +  
+      -  +  +  
+
+    - student output:
+      +  -  -  
+      +  -  +  
+      +  -  -  
+
+
+  * java ThueMorse 5
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  +  -  
+      -  +  +  -  +  
+      -  +  +  -  +  
+      +  -  -  +  -  
+      -  +  +  -  +  
+
+    - student output:
+      +  -  -  +  -  
+      +  +  -  -  +  
+      +  -  +  -  -  
+      +  -  +  +  -  
+      +  -  -  +  +  
+
+
+  * java ThueMorse 6
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  +  -  +  
+      -  +  +  -  +  -  
+      -  +  +  -  +  -  
+      +  -  -  +  -  +  
+      -  +  +  -  +  -  
+      +  -  -  +  -  +  
+
+    - student output:
+      +  -  -  +  -  +  
+      +  -  -  +  +  -  
+      +  -  -  +  -  +  
+      +  -  +  -  -  +  
+      +  -  -  +  -  +  
+      +  -  -  +  +  -  
+
+
+  * java ThueMorse 7
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  +  -  +  +  
+      -  +  +  -  +  -  -  
+      -  +  +  -  +  -  -  
+      +  -  -  +  -  +  +  
+      -  +  +  -  +  -  -  
+      +  -  -  +  -  +  +  
+      +  -  -  +  -  +  +  
+
+    - student output:
+      +  -  -  +  -  +  +  
+      -  -  +  +  -  +  -  
+      -  +  -  +  +  -  +  
+      -  -  +  +  -  -  +  
+      -  +  +  -  -  +  +  
+      -  +  -  -  +  +  -  
+      -  +  -  +  +  -  +  
+
+
+  * java ThueMorse 9
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  +  -  +  +  -  -  
+      -  +  +  -  +  -  -  +  +  
+      -  +  +  -  +  -  -  +  +  
+      +  -  -  +  -  +  +  -  -  
+      -  +  +  -  +  -  -  +  +  
+      +  -  -  +  -  +  +  -  -  
+      +  -  -  +  -  +  +  -  -  
+      -  +  +  -  +  -  -  +  +  
+      -  +  +  -  +  -  -  +  +  
+
+    - student output:
+      +  -  -  +  -  +  +  -  -  
+      +  +  -  +  -  -  +  -  +  
+      +  -  +  -  -  +  +  -  -  
+      +  -  +  +  -  -  +  +  -  
+      +  -  -  +  +  -  -  +  -  
+      +  +  -  +  -  -  +  -  +  
+      +  -  -  +  +  -  +  -  -  
+      +  -  +  +  -  +  -  -  +  
+      +  -  -  +  -  +  +  -  +  
+
+
+  * java ThueMorse 10
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  +  -  +  +  -  -  +  
+      -  +  +  -  +  -  -  +  +  -  
+      -  +  +  -  +  -  -  +  +  -  
+      +  -  -  +  -  +  +  -  -  +  
+      -  +  +  -  +  -  -  +  +  -  
+      +  -  -  +  -  +  +  -  -  +  
+      +  -  -  +  -  +  +  -  -  +  
+      -  +  +  -  +  -  -  +  +  -  
+      -  +  +  -  +  -  -  +  +  -  
+      +  -  -  +  -  +  +  -  -  +  
+
+    - student output:
+      +  -  -  +  -  +  +  -  -  +  
+      +  -  +  -  -  +  -  +  +  -  
+      +  -  -  +  +  -  -  +  -  +  
+      +  -  -  +  +  -  +  -  -  +  
+      +  -  -  +  -  +  +  -  +  -  
+      -  +  -  +  +  -  -  +  +  -  
+      +  -  -  +  -  +  +  -  +  -  
+      -  +  +  -  -  +  -  +  +  -  
+      +  -  -  +  -  +  +  -  -  +  
+      +  -  +  -  -  +  +  -  -  +  
+
+
+  * java ThueMorse 11
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  +  -  +  +  -  -  +  +  
+      -  +  +  -  +  -  -  +  +  -  -  
+      -  +  +  -  +  -  -  +  +  -  -  
+      +  -  -  +  -  +  +  -  -  +  +  
+      -  +  +  -  +  -  -  +  +  -  -  
+      +  -  -  +  -  +  +  -  -  +  +  
+      +  -  -  +  -  +  +  -  -  +  +  
+      -  +  +  -  +  -  -  +  +  -  -  
+      -  +  +  -  +  -  -  +  +  -  -  
+      +  -  -  +  -  +  +  -  -  +  +  
+      +  -  -  +  -  +  +  -  -  +  +  
+
+    - student output:
+      +  -  -  +  -  +  +  -  -  +  +  
+      -  +  -  -  +  -  +  +  -  +  -  
+      -  +  +  -  -  +  -  +  +  -  -  
+      +  +  -  +  -  -  +  +  -  -  +  
+      -  +  +  -  +  -  -  +  -  +  +  
+      -  -  +  +  -  +  -  -  +  -  +  
+      +  -  +  -  -  +  +  -  -  +  -  
+      +  +  -  +  -  -  +  -  +  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  
+      +  -  +  +  -  -  +  +  -  +  -  
+      -  +  -  +  +  -  +  -  -  +  +  
+
+
+  * java ThueMorse 12
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  
+
+    - student output:
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      +  -  -  +  -  +  +  -  +  -  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      +  -  -  +  +  -  -  +  -  +  +  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      +  -  -  +  -  +  +  -  +  -  -  +  
+      +  -  -  +  -  +  +  -  +  -  -  +  
+      -  +  +  -  -  +  +  -  +  -  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      +  -  -  +  -  +  +  -  +  -  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  
+      +  -  -  +  +  -  -  +  -  +  +  -  
+
+
+  * java ThueMorse 13
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  +  -  +  +  -  -  +  +  -  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  
+
+    - student output:
+      +  -  -  +  -  +  +  -  -  +  +  -  +  
+      -  -  +  -  +  +  -  +  -  -  +  +  -  
+      -  +  -  +  +  -  -  +  +  -  +  -  -  
+      +  +  -  -  +  -  +  +  -  +  -  -  +  
+      -  +  +  -  -  +  +  -  +  -  -  +  -  
+      +  +  -  +  -  -  +  +  -  -  +  -  +  
+      +  -  +  -  -  +  -  +  +  -  -  +  +  
+      -  +  -  -  +  +  -  -  +  -  +  +  -  
+      -  +  +  -  +  -  -  +  -  +  +  -  +  
+      -  -  +  +  -  -  +  -  +  +  -  -  +  
+      +  -  +  -  -  +  +  -  -  +  -  +  +  
+      -  +  -  -  +  -  +  +  -  -  +  +  -  
+      +  -  -  +  +  -  -  +  -  +  +  -  -  
+
+
+  * java ThueMorse 14
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  
+
+    - student output:
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  
+      -  +  -  +  +  -  +  -  -  +  +  -  -  +  
+      -  +  +  -  -  +  +  -  +  -  -  +  +  -  
+      -  +  -  +  +  -  +  -  -  +  -  +  +  -  
+      -  +  +  -  +  -  -  +  -  +  +  -  +  -  
+      -  +  +  -  -  +  -  +  +  -  +  -  -  +  
+      -  +  +  -  -  +  +  -  +  -  -  +  +  -  
+      -  +  -  +  +  -  -  +  +  -  +  -  -  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  
+      +  -  -  +  +  -  +  -  -  +  +  -  -  +  
+      -  +  +  -  +  -  -  +  -  +  +  -  -  +  
+      +  -  +  -  -  +  +  -  -  +  -  +  +  -  
+      -  +  +  -  +  -  -  +  -  +  +  -  +  -  
+      -  +  +  -  -  +  -  +  +  -  +  -  -  +  
+
+
+  * java ThueMorse 15
+    - student solution does not match reference solution
+    - reference output:
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+      -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+
+    - student output:
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+      +  -  +  +  -  +  -  -  +  +  -  -  +  -  +  
+      +  -  -  +  +  -  +  -  -  +  +  -  -  +  -  
+      +  +  -  +  -  -  +  -  +  +  -  -  +  +  -  
+      +  -  -  +  -  +  +  -  +  -  -  +  +  -  -  
+      +  -  +  +  -  +  -  -  +  -  +  +  -  -  +  
+      +  -  +  -  -  +  +  -  -  +  -  +  +  -  -  
+      +  +  -  +  -  -  +  -  +  +  -  +  -  -  +  
+      +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+      +  +  -  -  +  -  +  +  -  +  -  -  +  -  +  
+      +  -  -  +  +  -  +  -  -  +  +  -  -  +  -  
+      +  +  -  -  +  +  -  +  -  -  +  -  +  +  -  
+      +  -  -  +  +  -  -  +  -  +  +  -  +  -  -  
+      +  -  +  +  -  -  +  +  -  +  -  -  +  -  +  
+      +  -  +  -  -  +  +  -  -  +  -  +  +  -  -  
+
+
+==&gt; <font color="#990000"><b>FAILED</b></font>
+
+Test 4: check corner case
+  * java ThueMorse 1
+==&gt; passed
+
+Test 5: check random values of n
+  * 100 random values of n in [16, 32)
+    - student solution does not match reference solution
+    - n = 31
+    - failed on trial 1 of 100
+
+  * 100 random values of n in [32, 64)
+    - student solution does not match reference solution
+    - n = 48
+    - failed on trial 1 of 100
+
+  * 50 random values of n in [64, 128)
+    - student solution does not match reference solution
+    - n = 67
+    - failed on trial 1 of 50
+
+  * 25 random values of n in [128, 256)
+    - student solution does not match reference solution
+    - n = 241
+    - failed on trial 1 of 25
+
+==&gt; <font color="#990000"><b>FAILED</b></font>
+
+
+ThueMorse Total: 3/5 tests passed!
+
+
+================================================================
+Testing correctness of Birthday
+*-----------------------------------------------------------
+Running 6 total tests.
+
+Test 1: check output format
+  % java Birthday 365 100000
+  1    0    0.0
+  2    242    0.00242
+  3    574    0.00816
+  4    853    0.01669
+  5    1077    0.02746
+  6    1293    0.040389999999999995
+  7    1566    0.056049999999999996
+  8    1797    0.07402
+  9    2122    0.09524
+  10    2236    0.11760000000000001
+  11    2439    0.14199
+  12    2600    0.16799
+  13    2749    0.19548
+  14    2917    0.22465
+  15    3046    0.25511
+  16    3115    0.28626
+  17    3114    0.3174
+  18    3154    0.34894000000000003
+  19    3297    0.38191
+  20    3202    0.41393
+  21    3282    0.44675000000000004
+  22    3195    0.4787
+  23    3117    0.50987
+
+  % java Birthday 31 100000
+  1    0    0.0
+  2    3291    0.03291
+  3    6410    0.09701000000000001
+  4    8929    0.18630000000000002
+  5    10845    0.29475
+  6    11691    0.41166
+  7    11795    0.52961
+
+==&gt; passed
+
+Test 2: check values in first column
+  * java Birthday 365 10000
+  * java Birthday 31 10000
+  * java Birthday 1 1000
+  * java Birthday 2 1000
+==&gt; passed
+
+Test 3: check that cumulative percentages are monotone nondecreasing
+        and table stops when percentage reaches (or exceeds) 50%
+  * java Birthday 365 10000 [ repeated 10 times ]
+  * java Birthday 31 10000 [ repeated 10 times ]
+  * java Birthday 10 5 [ repeated 1000 times ]
+  * java Birthday 4 4 [ repeated 1000 times ]
+  * java Birthday 2 2 [ repeated 1000 times ]
+==&gt; passed
+
+Test 4: check that cumulative percentages are consistent with frequencies
+  * java Birthday 365 10000
+  * java Birthday 31 10000
+==&gt; passed
+
+Test 5: check that each execution of program outputs a different table
+  * java Birthday 365 10000 [ repeated twice ]
+  * java Birthday 31 10000 [ repeated twice ]
+==&gt; passed
+
+Test 6: check randomness of birthdays
+  * java Birthday 365 1000000
+  * java Birthday 31 1000000
+
+            value  observed  expected   2*O*ln(O/E)
+        -------------------------------------------
+                2     33369   32258.1       2259.70
+                3     64552   62435.0       4305.06
+                4     89776   87610.4       4384.39
+                5    108325  105509.2       5706.00
+                6    117221  114868.9       4751.97
+             &gt;= 7    586757  597318.4     -20935.04
+        -------------------------------------------
+                    1000000 1000000.0        472.08
+    
+    G-statistic = 472.08 (p-value = 0.000000, reject if p-value &lt;= 0.0001)
+    Note: a correct solution will fail this test by bad luck 1 time in 10,000.
+
+  * java Birthday 7 1000000
+
+            value  observed  expected   2*O*ln(O/E)
+        -------------------------------------------
+                2    167090  142857.1      52361.82
+                3    277668  244898.0      69741.61
+             &gt;= 4    555242  612244.9    -108525.72
+        -------------------------------------------
+                    1000000 1000000.0      13577.70
+    
+    G-statistic = 13577.70 (p-value = 0.000000, reject if p-value &lt;= 0.0001)
+    Note: a correct solution will fail this test by bad luck 1 time in 10,000.
+
+  * java Birthday 5 1000000
+
+            value  observed  expected   2*O*ln(O/E)
+        -------------------------------------------
+                2    249118  200000.0     109417.27
+             &gt;= 3    750882  800000.0     -95156.59
+        -------------------------------------------
+                    1000000 1000000.0      14260.67
+    
+    G-statistic = 14260.67 (p-value = 0.000000, reject if p-value &lt;= 0.0001)
+    Note: a correct solution will fail this test by bad luck 1 time in 10,000.
+
+==&gt; <font color="#990000"><b>FAILED</b></font>
+
+
+Birthday Total: 5/6 tests passed!
+
+
+================================================================
+Testing correctness of Minesweeper
+*-----------------------------------------------------------
+Running 11 total tests.
+
+Test 1: check output format
+  % java Minesweeper 9 9 10
+  0  0  1  *  2  1  0  0  0  
+  0  0  1  2  *  1  0  0  0  
+  1  1  1  1  1  1  0  0  0  
+  1  *  1  0  1  1  1  1  1  
+  1  1  1  0  1  *  2  2  *  
+  0  0  0  0  2  3  4  *  2  
+  0  0  0  0  2  *  *  2  1  
+  0  0  0  0  2  *  4  2  0  
+  0  0  0  0  1  2  *  1  0  
+
+  % java Minesweeper 16 16 40
+  0  0  1  *  1  2  *  *  *  1  0  1  *  1  0  0  
+  0  0  1  1  2  3  *  5  4  3  1  1  1  1  0  0  
+  0  0  0  0  1  *  4  4  *  *  1  0  0  0  0  0  
+  1  1  0  1  2  3  *  *  3  2  1  0  0  0  0  0  
+  *  1  1  2  *  2  2  2  1  0  0  0  0  0  0  0  
+  1  1  2  *  3  2  1  1  0  0  0  0  0  0  0  0  
+  0  0  2  *  4  4  *  2  0  0  0  0  0  0  0  0  
+  1  1  1  2  *  *  *  2  1  1  1  0  0  0  0  0  
+  *  1  0  1  2  3  2  1  2  *  3  1  1  0  0  0  
+  1  2  1  1  0  0  0  0  2  *  3  *  1  0  0  0  
+  0  1  *  1  0  0  0  0  1  1  3  2  2  1  2  2  
+  0  1  2  2  1  0  0  1  1  2  2  *  2  3  *  *  
+  0  0  1  *  2  1  0  1  *  2  *  2  3  *  *  4  
+  0  0  1  3  *  2  1  2  2  3  2  2  3  *  *  2  
+  0  0  0  2  *  3  2  *  1  1  *  1  2  *  3  1  
+  0  0  0  1  2  *  2  1  1  1  1  1  1  1  1  0  
+
+  % java Minesweeper 16 30 82
+  0  0  1  *  *  *  1  0  0  0  0  0  0  0  0  1  *  3  2  1  0  0  0  0  0  0  0  1  1  1  
+  0  0  1  2  3  2  1  1  1  1  1  1  1  1  1  2  2  *  *  2  1  1  0  0  0  0  0  1  *  1  
+  0  0  0  1  1  1  0  1  *  1  1  *  2  2  *  1  1  2  2  2  *  1  0  0  0  0  0  1  2  2  
+  0  1  1  2  *  1  0  1  1  2  3  4  *  3  2  2  2  2  2  2  2  1  0  1  2  2  1  0  2  *  
+  0  1  *  2  2  2  1  0  0  1  *  *  3  *  1  1  *  *  3  *  1  0  0  1  *  *  2  1  2  *  
+  0  1  2  2  2  *  2  2  1  2  2  3  3  2  1  1  4  *  4  1  1  0  0  1  3  5  *  2  2  2  
+  0  0  1  *  2  2  *  2  *  1  0  1  *  2  1  1  2  *  2  0  0  1  1  1  1  *  *  3  1  *  
+  1  1  2  1  1  1  1  3  3  4  2  2  1  2  *  1  1  1  1  0  0  2  *  4  3  5  *  3  2  2  
+  1  *  1  0  0  0  0  1  *  *  *  2  0  1  1  1  0  0  1  1  2  3  *  *  *  3  *  2  2  *  
+  2  2  2  0  1  1  1  2  3  5  *  2  0  0  0  0  1  1  3  *  3  *  5  *  3  2  2  2  3  *  
+  1  *  2  1  2  *  1  1  *  2  1  2  1  1  0  0  1  *  3  *  3  2  *  4  3  1  1  *  3  2  
+  1  1  2  *  3  3  3  3  3  2  1  1  *  1  0  0  1  1  2  1  1  2  3  *  *  1  1  2  *  1  
+  0  0  2  3  *  3  *  *  2  *  2  2  1  1  0  0  0  0  0  0  0  1  *  3  3  2  2  2  2  1  
+  0  0  1  *  3  4  *  3  2  2  *  2  1  1  0  0  0  0  1  2  2  2  1  1  1  *  3  *  2  1  
+  0  0  1  1  2  *  2  1  0  1  1  2  *  2  1  0  0  0  1  *  *  1  0  0  1  3  *  4  *  1  
+  0  0  0  0  1  1  1  0  0  0  0  1  2  *  1  0  0  0  1  2  2  1  0  0  0  2  *  3  1  1  
+
+  % java Minesweeper 4 8 0
+  0  0  0  0  0  0  0  0  
+  0  0  0  0  0  0  0  0  
+  0  0  0  0  0  0  0  0  
+  0  0  0  0  0  0  0  0  
+
+  % java Minesweeper 8 4 32
+  *  *  *  *  
+  *  *  *  *  
+  *  *  *  *  
+  *  *  *  *  
+  *  *  *  *  
+  *  *  *  *  
+  *  *  *  *  
+  *  *  *  *  
+
+  % java Minesweeper 1 20 10
+  *  1  0  0  0  1  *  1  0  1  *  *  *  *  *  2  *  2  *  *  
+
+==&gt; passed
+
+Test 2: check that counts are consistent with mines (varying k)
+  * m =  4, n =  8, k random [1000 trials]
+  * m =  8, n =  4, k random [1000 trials]
+  * m =  5, n = 40, k random [1000 trials]
+  * m =  7, n = 30, k random [1000 trials]
+  * m = 10, n = 10, k random [1000 trials]
+==&gt; passed
+
+Test 3: check that counts are consistent with mines (fixed k)
+  * k =  1, m and n random   [1000 trials]
+  * k = 10, m and n random   [1000 trials]
+  * k = 20, m and n random   [1000 trials]
+  * k = 50, m and n random   [1000 trials]
+  * k = 80, m and n random   [1000 trials]
+  * k = 90, m and n random   [1000 trials]
+  * k = 99, m and n random   [1000 trials]
+==&gt; passed
+
+Test 4: check that counts are consistent with mines (corner cases)
+  * m =  5, n = 10, k =  0
+  * m = 10, n =  5, k =  0
+  * m =  5, n = 10, k = 50
+  * m = 10, n =  5, k = 50
+  * k =  0, m and n random   [1000 trials]
+  * k =  1, m and n random   [1000 trials]
+==&gt; passed
+
+Test 5: check that program produces different results each time
+  * m =  4, n =  8, k = 16 [2 trials]
+  * m =  8, n =  4, k = 26 [2 trials]
+  * m =  1, n = 20, k = 16 [2 trials]
+  * m = 20, n =  1, k = 10 [2 trials]
+==&gt; passed
+
+Test 6: check number of mines, with k varying
+  * m =  4, n =  8, k random [1000 trials]
+  * m =  8, n =  4, k random [1000 trials]
+  * m =  5, n = 40, k random [1000 trials]
+  * m =  7, n = 30, k random [1000 trials]
+  * m = 10, n = 10, k random [1000 trials]
+==&gt; passed
+
+Test 7: check number of mines, with k fixed
+  * k =  5, m and n random   [1000 trials]
+  * k = 10, m and n random   [1000 trials]
+  * k = 50, m and n random   [1000 trials]
+  * k = 99, m and n random   [1000 trials]
+==&gt; passed
+
+Test 8: check number of mines for corner cases
+  * m =  5, n = 20, k =  0
+  * m = 20, n =  5, k =  0
+  * m =  5, n = 10, k = 50
+  * m = 10, n =  5, k = 50
+  * k =  0, m and n random   [1000 trials]
+  * k =  1, m and n random   [1000 trials]
+==&gt; passed
+
+Test 9: check that mines are uniformly random
+  * m = 1, n = 2, k = 1 [repeated 15000 times]
+  * m = 1, n = 3, k = 1 [repeated 15000 times]
+  * m = 2, n = 2, k = 2 [repeated 15000 times]
+  * m = 2, n = 4, k = 3 [repeated 15000 times]
+  * m = 3, n = 3, k = 6 [repeated 15000 times]
+==&gt; passed
+
+Test 10: check statistical independence of mines within an m-by-n grid
+  * m = 500, n = 500, k = 125000
+  * m = 500, n = 500, k = 25000
+  * m = 500, n = 500, k = 225000
+  * m = 100, n = 900, k = 27000
+  * m = 900, n = 100, k = 63000
+==&gt; passed
+
+Test 11: check statistical independence of mines between m-by-n grids
+  * m = 1, n = 2, k = 1 [repeated 50000 times]
+  * m = 1, n = 3, k = 1 [repeated 50000 times]
+  * m = 2, n = 2, k = 2 [repeated 50000 times]
+  * m = 2, n = 4, k = 3 [repeated 50000 times]
+  * m = 3, n = 3, k = 8 [repeated 50000 times]
+==&gt; passed
+
+
+Minesweeper Total: 11/11 tests passed!
+
+
+================================================================
+
+</pre>
+
+
+</body></html>
